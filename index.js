@@ -96,16 +96,31 @@ console.log(copyString("Why?",4));
 Pass the city name as a parameter. 
 Return false if they start with a different string.   */
 
+const displayCity = function (city){
+    if (city.startsWith("Los") || city.startsWith("New")){
+        return true;
+    }else{
+        return false;
+    }
+}
 
-
+console.log (displayCity("Newyork"));
+console.log (displayCity("Jakarta"));
 
 
 
 /* 8. Create a function to calculate and return the sum of all elements from an array with 3 elements. 
 Pass the array as a parameter.   */
 
+const sumOfArray = function (arr){
+    let sum = 0;
+    for (let i=0; i<arr.length; i++){
+        sum += arr[i]; 
+    }
+    return sum 
+}
 
-
+console.log (sumOfArray([1,2,2]));
 
 
 
@@ -113,7 +128,18 @@ Pass the array as a parameter.   */
 /* 9. Create a function to test if an array of length 2 contains 1 OR 3. Return true is it does, false if it doesn't.   */
 
 
+const containOneOrThree = function (arr){
+    for (let i=0; i<arr.length; i++){
+        if (arr[i] === 1 || arr[i] === 3 ){
+            return true;
+        }else{
+            return false;
+        }
+    }
+}
 
+const arrAnything = [1,2];
+console.log(containOneOrThree(arrAnything));
 
 
 
@@ -122,7 +148,16 @@ Pass the array as a parameter.   */
 /*  10. Create a function to test if an array of length 2 DOES NOT contain 1 or 3. 
 Return true if it doesn't, false if it does.  */
 
+const notContainOneOrThree = function (arr10){
+    if (!arr10.includes(1) || !arr10.includes(3)){
+        return true;
+    }else{
+        return false;
+    }
+}
 
+const arrSomething = [1,3];
+console.log(notContainOneOrThree(arrSomething));
 
 
 
@@ -130,6 +165,17 @@ Return true if it doesn't, false if it does.  */
 /* 11. Create a function to find the longest string from a given array of strings. 
 Pass the array as parameter and return the longest string.   */
 
+const whichLongest = function (arr11){
+    let longestStr =""
+    arr11.map(function(str){
+        if (str.length > longestStr.length){
+            longestStr = str;
+            }
+     })
+     return longestStr
+}
+
+console.log(whichLongest (["people", "I", "you", "them"]));
 
 
 
@@ -140,21 +186,39 @@ Right angle ⇒ 90 degree. Return right
 Obtuse angle ⇒ between 90 and 180. Return obtuse
 Straight angle ⇒ 180 degrees. Return straight  */
 
+const typesOfAngle = function (int){
+    if (int>0 && int<90){
+        return "acute";
+    } else if (int === 90){
+        return "right";
+    } else if (int >90 && int<180){
+        return "obtuse";
+    }else if (int === 180){
+        return "straight";
+    }
+}
+
+console.log (typesOfAngle(90));
+console.log (typesOfAngle(135));
+
+
+
+
+/* 13. Create a function to find and return the index of the greatest element of a given array of 
+integers that you passed as a parameter  */
+
+// const indexOfGreatest = function (arr){
+
+       
+// console.log(indexOfGreatest([1,1,1,3]));
 
 
 
 
 
 
-/* 13. Create a function to find and return the index of the greatest element of a given array of integers that you passed as a parameter  */
-
-
-
-
-
-
-
-/* 14. Create a function to find and return the largest even number from an array of integers that is passed a parameter.   */
+/* 14. Create a function to find and return the largest even number from an array of integers 
+that is passed a parameter.   */
 
 
 
