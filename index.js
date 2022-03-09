@@ -8,8 +8,8 @@ const sumOfTwoIntegers = function (a,b){
     }
     
 }
-console.log(sumOfTwoIntegers(3,3));
-console.log(sumOfTwoIntegers(1,2));
+// console.log(sumOfTwoIntegers(3,3));
+// console.log(sumOfTwoIntegers(1,2));
 
 
 
@@ -25,7 +25,7 @@ if (g === 50 || h=== 50 || g+h===50){
     }
 }
 
-console.log(checkTwoIntegers (5,1));
+//console.log(checkTwoIntegers (5,1));
 
 
 
@@ -38,7 +38,7 @@ const removeACharacter = function (str,x){
     return newStr;
 }
 
-console.log (removeACharacter ("Mouse",1));
+//console.log (removeACharacter ("Mouse",1));
 
 
 /* 4. Create a function to find and return the largest of three given integers.   */
@@ -55,7 +55,7 @@ const whichLargest = function (r,s,t){
     }
 }
 
-console.log(whichLargest(1,3,2));
+//console.log(whichLargest(1,3,2));
 
 
 
@@ -72,7 +72,7 @@ const areInRange = function (k,l){
     }
 }
 
-console.log(areInRange(5,1));
+//console.log(areInRange(5,1));
 
 
 
@@ -87,7 +87,7 @@ const copyString = function (txt,int){
     return newStr1;
 }
 
-console.log(copyString("Why?",4));
+//console.log(copyString("Why?",4));
 
 
 
@@ -104,8 +104,8 @@ const displayCity = function (city){
     }
 }
 
-console.log (displayCity("Newyork"));
-console.log (displayCity("Jakarta"));
+//console.log (displayCity("Newyork"));
+//console.log (displayCity("Jakarta"));
 
 
 
@@ -120,7 +120,7 @@ const sumOfArray = function (arr){
     return sum 
 }
 
-console.log (sumOfArray([1,2,2]));
+//console.log (sumOfArray([1,2,2]));
 
 
 
@@ -139,7 +139,7 @@ const containOneOrThree = function (arr){
 }
 
 const arrAnything = [1,2];
-console.log(containOneOrThree(arrAnything));
+//console.log(containOneOrThree(arrAnything));
 
 
 
@@ -157,7 +157,7 @@ const notContainOneOrThree = function (arr10){
 }
 
 const arrSomething = [1,3];
-console.log(notContainOneOrThree(arrSomething));
+//console.log(notContainOneOrThree(arrSomething));
 
 
 
@@ -175,7 +175,7 @@ const whichLongest = function (arr11){
      return longestStr
 }
 
-console.log(whichLongest (["people", "I", "you", "them"]));
+//console.log(whichLongest (["people", "I", "you", "them"]));
 
 
 
@@ -198,21 +198,38 @@ const typesOfAngle = function (int){
     }
 }
 
-console.log (typesOfAngle(90));
-console.log (typesOfAngle(135));
+//console.log (typesOfAngle(90));
+//console.log (typesOfAngle(135));
 
 
 
 
-/* 13. Create a function to find and return the index of the greatest element of a given array of 
+/* **13**. Create a function to find and return the index of the greatest element of a given array of 
 integers that you passed as a parameter  */
+    
+//     function highestNum (arr){
+//     let max = arr[0];
+//     for (let i=1; i<arr.length; i++){
+//         if(arr[i]>max){
+//         max = arr[i];
+//     }
+//     return max;
+//     }
+// }
 
-// const indexOfGreatest = function (arr){
+const indexOfHighestNum = function (arr){
 
-       
-// console.log(indexOfGreatest([1,1,1,3]));
-
-
+    let max =arr[0];
+    for (let i = 0;i<= arr.length;i++) {
+    if (arr[i] > max) {
+    max = arr[i]
+    }
+    }
+    return arr.indexOf(max);
+    }
+    
+    let Arr = [5,1,1,3,4]
+    console.log(indexOfHighestNum(Arr));
 
 
 
@@ -221,7 +238,16 @@ integers that you passed as a parameter  */
 that is passed a parameter.   */
 
 
+const largestEvenNumber = function (arr){
+    arr.sort( (x,y) => y-x );
 
+    for (let i=0; i<arr.length; i++){
+        if (arr[i]%2 === 0)
+        return arr[i];
+    }
+}
+
+console.log(largestEvenNumber([1,2,3,1,5,4]));
 
 
 
@@ -229,7 +255,16 @@ that is passed a parameter.   */
 /*  15. Create a function to check from two given integers (passed as parameters) if one is positive and the other is negative. 
 Return true if that's the case, return false if it's not.  */
 
+const checkNumber = function (a,b){
+    if(Math.sign(a) === 1 && Math.sign(b) === -1 
+   || Math.sign(a)  === -1 && Math.sign(b) === 1) {
+        return true
+    }else{
+        return false
+    }
+}
 
+console.log(checkNumber(1,3));
 
 
 
@@ -238,9 +273,22 @@ Return true if that's the case, return false if it's not.  */
 If the string's length is less than 3, convert the whole string into uppercase. 
 Pass the original string as a parameter. */
 
+// (str.substring(0,3)).toLowerCase()  --> to change the first 3 letter of a string. 
+// (0,3) starts at position 0 end at 3
 
+// str.substring(3,str.length) --> to get the last part of the string starting from the position 3
 
+const newString = function (str){
+    if (str.length > 3){
+        return ((str.substring(0,3)).toLowerCase() + str.substring(3,str.length));
+        
+    } else{
+        return str.toUpperCase();
+}
+}
 
+console.log(newString("sun"));
+console.log(newString("SUNFLOWER"));
 
 
 /*  17. Create a function to calculate the sum of two integers (passed as parameters). 
