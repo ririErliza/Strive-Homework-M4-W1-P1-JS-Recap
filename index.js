@@ -273,10 +273,6 @@ console.log(checkNumber(1,3));
 If the string's length is less than 3, convert the whole string into uppercase. 
 Pass the original string as a parameter. */
 
-// (str.substring(0,3)).toLowerCase()  --> to change the first 3 letter of a string. 
-// (0,3) starts at position 0 end at 3
-
-// str.substring(3,str.length) --> to get the last part of the string starting from the position 3
 
 const newString = function (str){
     if (str.length > 3){
@@ -289,6 +285,13 @@ const newString = function (str){
 
 console.log(newString("sun"));
 console.log(newString("SUNFLOWER"));
+
+/*(str.substring(0,3)).toLowerCase()  --> to change the first 3 letter of a string. 
+string.substring(start,end) = the start position, and the end position (end not included).
+(0,3) =  slices out a portion of a string from position 0 to position 2 (3-1)*/
+
+// str.substring(3,str.length) --> to get the last part of the string starting from the position 3
+
 
 
 /*  17. Create a function to calculate the sum of two integers (passed as parameters). 
@@ -308,9 +311,39 @@ If the number does not have 3,5, or 7, return the original number.
 One number can have more than one factor, in that case you should return both names. 
 Ex: 15 has both 3 and 5 has factors: the function will return DiegoRiccardo  */
 
+const convertNumber = function (num){
+    if (num%3 === 0){
+        return "Diego";
+    } else if (num%5 === 0){
+        return "Riccardo";
+    } else if (num%7 === 0){
+        return "Stefano";
+    } else if (num%3 === 0 || num%5 === 0){
+        return "DiegoRiccardo";
+    } else if (num%3 === 0 && num%7 === 0){
+        return "DiegoStefano";
+    } else if (num%5 === 0 && num%7 === 0){
+        return "RiccardoStefano";
+    }else{
+        return num;
+    }
+}
 
+console.log(convertNumber(7));
 
 
 
 
 /*  19. Create a function that that takes a phrase as a parameter and returns its acronym. Ex. British Broadcasting Corporation returns BBC  */
+
+const fistLetter = function (string){
+    return string[0];
+}
+
+const makeAcronym = function (str){
+    let words = str.split(" ");
+    let acronym = words.map(fistLetter);
+    return acronym.join("").toUpperCase();
+}
+
+console.log(makeAcronym("British Broadcasting Corporation"));
