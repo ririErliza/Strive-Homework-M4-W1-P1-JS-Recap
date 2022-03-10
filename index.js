@@ -87,7 +87,7 @@ const copyString = function (txt,int){
     return newStr1;
 }
 
-//console.log(copyString("Why?",4));
+console.log(copyString("Why?",4));
 
 
 
@@ -137,6 +137,7 @@ const containOneOrThree = function (arr){
         }
     }
 }
+
 
 const arrAnything = [1,2];
 //console.log(containOneOrThree(arrAnything));
@@ -229,7 +230,7 @@ const indexOfHighestNum = function (arr){
     }
     
     let Arr = [5,1,1,3,4]
-    console.log(indexOfHighestNum(Arr));
+   // console.log(indexOfHighestNum(Arr));
 
 
 
@@ -239,7 +240,7 @@ that is passed a parameter.   */
 
 
 const largestEvenNumber = function (arr){
-    arr.sort( (x,y) => y-x );
+    // arr.sort( (x,y) => y-x );
 
     for (let i=0; i<arr.length; i++){
         if (arr[i]%2 === 0)
@@ -247,7 +248,7 @@ const largestEvenNumber = function (arr){
     }
 }
 
-console.log(largestEvenNumber([1,2,3,1,5,4]));
+//console.log(largestEvenNumber([1,2,3,1,5,4]));
 
 
 
@@ -264,7 +265,7 @@ const checkNumber = function (a,b){
     }
 }
 
-console.log(checkNumber(1,3));
+//console.log(checkNumber(1,3));
 
 
 
@@ -283,8 +284,8 @@ const newString = function (str){
 }
 }
 
-console.log(newString("sun"));
-console.log(newString("SUNFLOWER"));
+// console.log(newString("sun"));
+// console.log(newString("SUNFLOWER"));
 
 /*(str.substring(0,3)).toLowerCase()  --> to change the first 3 letter of a string. 
 string.substring(start,end) = the start position, and the end position (end not included).
@@ -297,9 +298,15 @@ string.substring(start,end) = the start position, and the end position (end not 
 /*  17. Create a function to calculate the sum of two integers (passed as parameters). 
 If the sum is in the 50-80 range, return 65, otherwise, return 80.  */
 
-
-
-
+const calculateSum = function (int1, int2){
+    let sum = int1 + int2;
+    if (sum >50 && sum <80){
+        return 65;
+    }else{
+        return 80;
+    }
+}
+console.log(calculateSum (30,30));
 
 
 /*  18. Create a function to convert a number (passed as a parameter) into a string, basing yourself on this example: 
