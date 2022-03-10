@@ -207,16 +207,7 @@ const typesOfAngle = function (int){
 
 /* **13**. Create a function to find and return the index of the greatest element of a given array of 
 integers that you passed as a parameter  */
-    
-//     function highestNum (arr){
-//     let max = arr[0];
-//     for (let i=1; i<arr.length; i++){
-//         if(arr[i]>max){
-//         max = arr[i];
-//     }
-//     return max;
-//     }
-// }
+
 
 const indexOfHighestNum = function (arr){
 
@@ -239,18 +230,35 @@ const indexOfHighestNum = function (arr){
 that is passed a parameter.   */
 
 
-const largestEvenNumber = function (arr){
+//const largestEvenNumber = function (arr){
     // arr.sort( (x,y) => y-x );
 
-    for (let i=0; i<arr.length; i++){
-        if (arr[i]%2 === 0)
-        return arr[i];
-    }
-}
+//     for (let i=0; i<arr.length; i++){
+//         if (arr[i]%2 === 0)
+//         return arr[i];
+//     }
+// }
 
 //console.log(largestEvenNumber([1,2,3,1,5,4]));
 
+const largestEvenNumber = function (arr){
+    let even = arr.filter(onlyEvenNumber);
+    function onlyEvenNumber(number){
+        return number %2 === 0;
+    }
+    console.log(even);
 
+    let max = even[0];
+    for (let i=0; i<even.length; i++){
+        if (even[i]>max){
+            max=even[i]
+        }
+    }
+    return max
+}
+
+let arr14 = [1,1,16,4,6,2,10,6]
+console.log(largestEvenNumber(arr14));
 
 
 /*  15. Create a function to check from two given integers (passed as parameters) if one is positive and the other is negative. 
@@ -306,7 +314,7 @@ const calculateSum = function (int1, int2){
         return 80;
     }
 }
-console.log(calculateSum (30,30));
+// console.log(calculateSum (30,30));
 
 
 /*  18. Create a function to convert a number (passed as a parameter) into a string, basing yourself on this example: 
@@ -336,7 +344,7 @@ const convertNumber = function (num){
     }
 }
 
-console.log(convertNumber(7));
+// console.log(convertNumber(7));
 
 
 
@@ -353,4 +361,4 @@ const makeAcronym = function (str){
     return acronym.join("").toUpperCase();
 }
 
-console.log(makeAcronym("British Broadcasting Corporation"));
+// console.log(makeAcronym("British Broadcasting Corporation"));
