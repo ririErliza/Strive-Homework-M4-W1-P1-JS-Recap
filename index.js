@@ -229,18 +229,6 @@ const indexOfHighestNum = function (arr){
 /* 14. Create a function to find and return the largest even number from an array of integers 
 that is passed a parameter.   */
 
-
-//const largestEvenNumber = function (arr){
-    // arr.sort( (x,y) => y-x );
-
-//     for (let i=0; i<arr.length; i++){
-//         if (arr[i]%2 === 0)
-//         return arr[i];
-//     }
-// }
-
-//console.log(largestEvenNumber([1,2,3,1,5,4]));
-
 const largestEvenNumber = function (arr){
     let even = arr.filter(onlyEvenNumber);
     function onlyEvenNumber(number){
@@ -248,7 +236,7 @@ const largestEvenNumber = function (arr){
     }
     console.log(even);
 
-    let max = even[0];
+    let max = 0;
     for (let i=0; i<even.length; i++){
         if (even[i]>max){
             max=even[i]
